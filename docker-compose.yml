@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  weblogic:
+    build:
+      context: .
+    #image: container-registry.oracle.com/middleware/weblogic:12.2.1.3 
+    ports:
+      - 7001:7001
+      - 9002:9002
+    volumes: 
+      - ./config/:/u01/oracle/properties/
+    environment:
+      - ADMIN_PASSWORD=Angecom1*
+      - PRODUCTION_MODE=prod
+# https://container-registry.oracle.com/pls/apex/f?p=113:4:108411782083975::NO:::
